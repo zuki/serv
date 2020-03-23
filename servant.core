@@ -43,6 +43,13 @@ filesets:
       - servant/servclone10_clock_gen.v : {file_type : verilogSource}
       - servant/servclone10.v : {file_type : verilogSource}
 
+  max1000:
+    files:
+      - data/max1000.sdc : {file_type : SDC}
+      - data/max1000.tcl : {file_type : tclSource}
+      - servant/max1000_pll.v : {file_type : verilogSource}
+      - servant/servmax1000.v : {file_type : verilogSource}
+
   tinyfpga_bx: {files: [data/tinyfpga_bx.pcf : {file_type : PCF}]}
   icebreaker : {files: [data/icebreaker.pcf  : {file_type : PCF}]}
 
@@ -70,6 +77,17 @@ targets:
         family : Cyclone 10 LP
         device : 10CL025YU256C8G
     toplevel : servclone10
+
+  max1000:
+    default_tool: quartus
+    description: max1000 FPGA board
+    filesets : [mem_files, soc, max1000]
+    parameters : [memfile, memsize=16384]
+    tools:
+      quartus:
+        family : MAX 10
+        device : 10M08SAU169C8G
+    toplevel : servmax1000
 
   icebreaker:
     default_tool : icestorm
