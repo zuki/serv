@@ -1,4 +1,4 @@
 [submodule "zephyr"]
 	path = zephyr
-	url = https://github.com/olofk/zephyr
+	url = git@github.com:zuki/zephyr.git
 	branch = serv
