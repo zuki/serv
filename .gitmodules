@@ -1,4 +1,0 @@
-[submodule "zephyr"]
-	path = zephyr
-	url = git@github.com:zuki/zephyr.git
-	branch = serv
